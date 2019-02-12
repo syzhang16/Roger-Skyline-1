@@ -11,6 +11,7 @@ configuer dhcp avec ip statique et netmask /30 :
     - mettre la vm en bridge
     - trouver le gateway du mac : route get default | grep gateway
     - changer le fichier /etc/resolv.conf
+    - restart la vm : 
     nameserver 10.12.17.140
     nameserver 8.8.8.8
     nameserver 8.8.4.4
