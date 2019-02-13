@@ -1,4 +1,4 @@
-maj packages : sudo apt update && sudo apt full-upgrade
+maj packages : sudo apt update -y && sudo apt upgrade -y
 
 creer un utilisateur : sudo useradd id
 
@@ -11,10 +11,10 @@ configuer dhcp avec ip statique et netmask /30 :
     - mettre la vm en bridge
     - trouver le gateway du mac : route get default | grep gateway
     - changer le fichier /etc/resolv.conf
-    - restart la vm : 
     nameserver 10.12.17.140
     nameserver 8.8.8.8
     nameserver 8.8.4.4
+    - restart la vm
     - modif fichier /etc/netplan/50-cloud-init.yaml
     # This file is generated from information provided by
     # the datasource.  Changes to it will not persist across an instance.
