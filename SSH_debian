@@ -18,3 +18,7 @@ sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no.
 sudo service ssh restart
 
 ssh -p '2222' 'syzhang@10.11.17.140'
+
+Root ne doit pas pouvoir se connecter
+ssh -p '2222' 'root@10.11.17.140'
+Permission denied (publickey).
