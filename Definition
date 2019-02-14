@@ -1,0 +1,33 @@
+DHCP
+
+protocole reseau dont le role est d'assurer la configuration automatique des parametres IP
+d'une station ou d'une machine, en lui attribuant automatiquement une adresse IP et un masque de sous reseau
+
+Netmask (masque de sous reseau)
+
+masque distinguant les bits d'une adresse IPv4 utilises pour identifier le sous reseau de ceux utiliser pour 
+identifier l'hote
+
+SSH (client)
+
+à la fois un programme informatique et un protocole de communication sécurisé. Le protocole de connexion 
+impose un échange de clés de chiffrement en début de connexion.
+
+SSHD (=daemon =serveur)
+
+pareil que ssh mais en version daemon
+
+PUBLICKEYS
+
+Using SSH public-key authentication to connect to a remote system is a robust, more secure alternative to 
+logging in with an account password or passphrase. SSH public-key authentication relies on asymmetric cryptographic
+algorithms that generate a pair of separate keys (a key pair), one "private" and the other "public". You keep the 
+private key a secret and store it on the computer you use to connect to the remote system. Conceivably, you can share
+the public key with anyone without compromising the private key; you store it on the remote system in a
+.ssh/authorized_keys directory.
+
+FIREWALL
+
+ logiciel et/ou un matériel permettant de faire respecter la politique de sécurité du réseau, celle-ci définissant
+ quels sont les types de communications autorisés sur ce réseau informatique. Il surveille et contrôle les applications 
+ et les flux de données (paquets).
