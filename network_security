@@ -1,0 +1,69 @@
+sudo /etc/network/interfaces
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug enp0s3
+iface enp0s3 inet static
+	address	10.12.2.144
+	netmask	255.255.255.252
+	gateway	10.12.254.254
+  
+  
+sudo /etc/resolv.conf
+
+domain 42.fr
+search 42.fr
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 10.11.17.140
+
+
+# edit /etc/sudoers
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+fbabin	ALL=(ALL:ALL) PASSWD:ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+
+connection bridge
+vm -> settings -> network -> connection_bridge
+
+Modify /etc/network/interfaces
+iface enp0s3 inet static address 10.12.2.144	# 10.1.XX.XX netmask 255.255.255.252	# /30 netmask gateway 10.12.254.254 # 42 gateway 10.1.254.254
+
+Modify /etc/resolv.conf to add
+nameserver 8.8.8.8 nameserver 8.8.4.4
+
+restart network
+service networking restart ifup enp0s3 reboot
+
