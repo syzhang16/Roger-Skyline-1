@@ -1,0 +1,3 @@
+Lister les regles existantes
+sudo iptables -L
+
