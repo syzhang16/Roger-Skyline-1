@@ -12,9 +12,9 @@ iface lo inet loopback
 # The primary network interface
 allow-hotplug enp0s3
 iface enp0s3 inet static
-	address	10.12.2.144
+	address	10.11.17.140
 	netmask	255.255.255.252
-	gateway	10.12.254.254
+	gateway	10.11.254.254
   
   
 sudo /etc/resolv.conf
