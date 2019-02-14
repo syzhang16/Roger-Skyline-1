@@ -67,3 +67,5 @@ nameserver 8.8.8.8 nameserver 8.8.4.4
 restart network
 service networking restart ifup enp0s3 reboot
 
+ping google.fr
+
