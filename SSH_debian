@@ -13,7 +13,8 @@ ssh-copy-id syzhang@10.11.17.140 -p 2222
 ssh syzhang@10.11.17.140 -p 2222
 ssh -p '2222' 'syzhang@10.11.17.140'
 
-sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no.
+sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no. 
+#PermitRootLogin prohibit-password et remplacez par No
 
 sudo service ssh restart
 
