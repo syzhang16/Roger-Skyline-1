@@ -79,3 +79,5 @@ yes
 apt-get update -y && apt-get upgrade -y
 apt-get install vim -y
 apt-get install sudo -y
+
+apt install -y zsh net-tools iptables-persistent fail2ban sendmail apache2
