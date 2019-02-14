@@ -3,7 +3,7 @@ vim /etc/ssh/sshd_config
 Modification du port en 2222
 décommentez la ligne PasswordAuthentification yes
 Décommentez #PubkeyAuthentication yes
-
+decommentez #PermitRootLogin prohibit-password et remplacez par No
 sudo reboot
 
 Dans iTerm :
@@ -13,8 +13,8 @@ ssh-copy-id syzhang@10.11.17.140 -p 2222
 ssh syzhang@10.11.17.140 -p 2222
 ssh -p '2222' 'syzhang@10.11.17.140'
 
-sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no. 
-#PermitRootLogin prohibit-password et remplacez par No
+sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no. (pour bloquer tout le monde
+et laisser q yes pour ne bloquer personne)
 
 sudo service ssh restart
 
