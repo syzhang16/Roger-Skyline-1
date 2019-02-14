@@ -1,0 +1,20 @@
+vim /etc/ssh/sshd_config
+
+Modification du port en 2222
+décommentez la ligne PasswordAuthentification yes
+Décommentez #PubkeyAuthentication yes
+
+sudo reboot
+
+Dans iTerm :
+ssh-keygen
+ssh-copy-id syzhang@10.11.17.140
+ssh-copy-id syzhang@10.11.17.140 -p 2222
+ssh syzhang@10.11.17.140 -p 2222
+ssh -p '2222' 'syzhang@10.11.17.140'
+
+sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no.
+
+sudo service ssh restart
+
+ssh -p '2222' 'syzhang@10.11.17.140'
