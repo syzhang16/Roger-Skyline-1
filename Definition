@@ -31,3 +31,29 @@ FIREWALL
  logiciel et/ou un matériel permettant de faire respecter la politique de sécurité du réseau, celle-ci définissant
  quels sont les types de communications autorisés sur ce réseau informatique. Il surveille et contrôle les applications 
  et les flux de données (paquets).
+
+IPTABLES
+
+Iptables est un logiciel libre grâce auquel l’administrateur système peut configurer les chaînes et règles du pare-feu
+en espace noyau.
+
+UFW
+
+outil de configuration simplifié en ligne de commande de Netfilter, qui donne une alternative à l'outil iptables. 
+UFW devrait à terme permettre une configuration automatique du pare-feu lors de l'installation de programmes en ayant besoin.
+
+DOS (Denial Of Service Attack)
+
+Attaque par déni de service attaque informatique ayant pour but de rendre indisponible un service, d'empêcher les 
+utilisateurs légitimes d'un service de l'utiliser
+
+FAIL2BAN
+
+Fail2ban lit des fichiers de log comme /var/log/pwdfail ou /var/log/apache/error_log et bannit les adresses IP qui ont obtenu
+un trop grand nombre d'échecs lors de l'authentification. Il met à jour les règles du pare-feu pour rejeter cette adresse IP.
+Ces règles peuvent êtres défines par l'utilisateur. Fail2ban peut lire plusieurs fichiers de log comme ceux de sshd ou du
+serveur Apache.  methode pour stopper les attaques en brute force.
+
+
+
+
