@@ -1,3 +1,11 @@
 Lister les regles existantes
 sudo iptables -L
 
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 2222
+sudo ufw enable
+sudo ufw status verbose
+
+Verifier si sudo apt update marche
+si pas d'erreur ou quoi c'est bon
