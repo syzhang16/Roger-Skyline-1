@@ -1,6 +1,6 @@
 VM installaton
 Name and operating system
-Name : vm_fbabin
+Name : roger
 Type : Linux
 Version : Debian (64-bits)
 Memory size
@@ -12,7 +12,7 @@ VDI (VirtualBox Disk Image)
 Storage
 Fixed size
 File location and size
-/sgoinfre/goinfre/Perso/fbabin/vm_fbabin.vdi
+/sgoinfre/goinfre/Perso/syzhang/roger.vdi
 
 8 Gb
 Set brifge connection
