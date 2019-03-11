@@ -24,3 +24,6 @@ KILL_HOSTS_DENY="ALL: $TARGET$ : DENY
 
 2.We can now restart the service to make changes effectives
 sudo service portsentry restart
+
+3.Test ports scans 
+nmap --script dos -Pn 10.11.17.140
