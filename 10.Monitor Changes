@@ -1,0 +1,38 @@
+1.Create the cronMonitor.sh file and write the following lines inside
+gde@roger-skyline-1:~$ cat ~/cronMonitor.sh
+#!/bin/bash
+
+FILE="/var/tmp/checksum"
+FILE_TO_WATCH="/var/spool/cron/crontabs/gde"
+MD5VALUE=$(sudo md5sum $FILE_TO_WATCH)
+
+if [ ! -f $FILE ]
+then
+	 echo "$MD5VALUE" > $FILE
+	 exit 0;
+fi;
+
+if [ "$MD5VALUE" != "$(cat $FILE)" ];
+	then
+	echo "$MD5VALUE" > $FILE
+	echo "$FILE_TO_WATCH has been modified ! '*_*" | mail -s "$FILE_TO_WATCH modified !" root
+fi;
+
+2.Add the task to cron
+crontab -e
+
+3.Write in the openned file thoses lines
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+@reboot sudo ~/update.sh
+0 4 * * 6 sudo ~/update.sh
+0 0 * * * sudo ~/cronMonitor.sh
+
+4.Make sure we have correct rights
+sudo chmod 755 cronMonitor.sh
+sudo chmod 755 update.sh
+sudo chown gde /var/mail/gde
+
+5.make sure cron service is enable
+sudo systemctl enable cron
