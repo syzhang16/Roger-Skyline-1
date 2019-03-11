@@ -1,0 +1,16 @@
+1.Create the update.sh file and write the following lines inside
+
+echo "sudo apt-get update -y >> /var/log/update_script.log" >> ~/update.sh
+echo "sudo apt-get upgrade -y >> /var/log/update_script.log" >> ~/update.sh
+
+2.Add the task to cron
+
+sudo crontab -e
+
+3.Write in the openned file thoses lines
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+@reboot sudo ~/update.sh
+0 4 * * 6 sudo ~/update.sh
