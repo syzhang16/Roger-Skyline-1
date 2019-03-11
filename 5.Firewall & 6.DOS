@@ -34,7 +34,7 @@ enabled = true
 port = http,https
 filter = http-get-dos
 logpath = /var/log/apache2/access.log (le fichier d'access sur server web)
-maxretry = 300
+maxretry = 60
 findtime = 300
 bantime = 600
 action = iptables[name=HTTP, port=http, protocol=tcp]"
