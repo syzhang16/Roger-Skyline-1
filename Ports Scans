@@ -1,0 +1,26 @@
+https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-0168788/
+
+nmap --script dos -p 2222 <target.com or ip> <enter>
+
+nmap --script dos -p 2222 10.11.17.140
+Seul mon port 2222 est ouvert
+
+
+1.Config portsentry
+First, we have to edit the /etc/default/portsentry file
+
+TCP_MODE="atcp"
+UDP_MODE="audp"
+After, edit the file /etc/portsentry/portsentry.conf
+
+BLOCK_UDP="1"
+BLOCK_TCP="1"
+Comment the current KILL_ROUTE and uncomment the following one:
+
+KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"
+Comment the following line:
+
+KILL_HOSTS_DENY="ALL: $TARGET$ : DENY
+
+2.We can now restart the service to make changes effectives
+sudo service portsentry restart
