@@ -73,8 +73,10 @@ Participate in the survey
 no
 Choose Software to Install
 SSH Server
+les 2 dernier
 Install GRUB
 yes
+
 
 apt-get update -y && apt-get upgrade -y
 apt-get install vim -y
