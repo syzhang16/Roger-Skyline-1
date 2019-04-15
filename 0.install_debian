@@ -56,8 +56,8 @@ Create new empty partition
 pri/log
 create a new partition
 4.5 Gb -> Primary -> Beginning -> Ext4
-2.5 Gb -> Primary -> End -> Ext4
-1.0 Gb -> Primary -> End -> Swap Area
+2.5 Gb -> Primary -> beginning -> Ext4
+1.0 Gb -> Primary -> beginning -> Swap Area
 
 Finish partitioning and write changes to disk -> yes
 Use another CD
