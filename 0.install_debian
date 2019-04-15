@@ -44,7 +44,7 @@ Domain name
 None
 Root password + confirm
 Set up users and passwords
-fbabin
+syzhang
 Select your timezone
 Eastern
 Partitions
@@ -55,9 +55,9 @@ Create new empty partition
 
 pri/log
 create a new partition
-4.2 Gb -> Primary -> Beginning -> Ext4
-2.4 Gb -> Primary -> End -> Ext4
-2.0 Gb -> Primary -> End -> Swap Area
+4.5 Gb -> Primary -> Beginning -> Ext4
+2.5 Gb -> Primary -> End -> Ext4
+1.0 Gb -> Primary -> End -> Swap Area
 
 Finish partitioning and write changes to disk -> yes
 Use another CD
@@ -78,13 +78,5 @@ Install GRUB
 yes
 
 
-apt-get update -y && apt-get upgrade -y
-apt-get install vim -y
-apt-get install sudo -y
-
-apt install -y 
-ufw
-portsentry
-fail2ban
-apache2
-mailutils
+apt-get update && apt-get upgrade
+apt-get install sudo vim iptables-persistent fail2ban sendmail apache2 portsentry
