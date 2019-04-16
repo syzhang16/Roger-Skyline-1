@@ -1,0 +1,42 @@
+sudo apt-get update
+sudo apt-get install fail2ban
+
+sudo vim /etc/fail2ban/jail.local
+
+[DEFAULT]
+ignoreip = 127.0.0.1/8 10.11.17.140
+
+[sshd]
+port    = 4444
+enabled = true
+maxretry = 3
+findtime = 30
+bantime = 60
+logpath = /var/log/auth.log
+
+[sshd-ddos]
+port    = 4444
+logpath = /var/log/auth.log
+enabled = true
+
+[nginx-http-auth]
+port     = http,https
+logpath  = /var/log/nginx/error.log
+enabled = true
+
+[nginx-limit-req]
+port     = http,https
+logpath  = /var/log/nginx/error.log
+enabled = true
+
+[nginx-botsearch]
+port     = http,https
+logpath  = /var/log/nginx/error.log
+enabled = true
+maxretry = 300
+findtime = 300
+bantime = 60
+
+[recidive]
+enabled = true
+
