@@ -7,7 +7,7 @@ sudo vim /etc/fail2ban/jail.local
 ignoreip = 127.0.0.1/8 10.11.17.140
 
 [sshd]
-port    = 4444
+port    = 2222
 enabled = true
 maxretry = 3
 findtime = 30
@@ -15,7 +15,7 @@ bantime = 60
 logpath = /var/log/auth.log
 
 [sshd-ddos]
-port    = 4444
+port    = 2222
 logpath = /var/log/auth.log
 enabled = true
 
