@@ -6,6 +6,10 @@ nmap --script dos -p 2222 10.11.17.140
 Seul mon port 2222 est ouvert
 
 
+https://fr-wiki.ikoula.com/fr/Se_prot%C3%A9ger_contre_le_scan_de_ports_avec_portsentry
+sudo apt-get update && sudo apt-get install portsentry
+sudo /etc/init.d/portsentry stop
+
 1.Config portsentry
 First, we have to edit the /etc/default/portsentry file
 
@@ -18,9 +22,8 @@ BLOCK_TCP="1"
 Comment the current KILL_ROUTE and uncomment the following one:
 
 KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"
-Comment the following line:
 
-KILL_HOSTS_DENY="ALL: $TARGET$ : DENY
+verify with sudo cat portsentry.conf | grep KILL_ROUTE | grep -v '#'
 
 2.We can now restart the service to make changes effectives
 sudo service portsentry restart
