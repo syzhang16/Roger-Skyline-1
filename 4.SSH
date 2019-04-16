@@ -9,6 +9,12 @@ sudo reboot
 Dans iTerm :
 ssh-keygen
 ssh-copy-id syzhang@10.11.17.140 -p 2222
+
+si le copy ne marche pas faire:
+cd ~/.ssh
+vi known_hosts et supprimer les trucs inutiles
+
+
 ssh -p '2222' 'syzhang@10.11.17.140'
 
 sudo vim /etc/ssh/sshd_config et passez "PasswordAuthentification yes" à no. (pour bloquer tout le monde
