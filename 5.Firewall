@@ -1,3 +1,5 @@
+sudo vim /etc/network/if-pre-up.d/firewall
+
 #!/bin/bash
 # Réinitialise les règles.
 iptables -F
@@ -90,3 +92,8 @@ iptables -A INPUT -p tcp -m multiport --sports 80,443 -m conntrack --ctstate EST
 iptables -A INPUT -p tcp --dport 25 -j ACCEPT
 
 exit 0
+
+
+sudo chmod -x /etc/network/if-pre-up.d/firewall
+sudo sh /etc/network/if-pre-up.d/firewall
+sudo reboot
