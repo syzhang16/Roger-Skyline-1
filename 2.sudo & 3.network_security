@@ -1,32 +1,4 @@
-sudo vim /etc/network/interfaces
-
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-allow-hotplug enp0s3
-iface enp0s3 inet static
-	address	10.11.17.140
-	netmask	255.255.255.252
-	gateway	10.11.254.254
-  
-  
-sudo /etc/resolv.conf
-
-domain 42.fr
-search 42.fr
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-nameserver 10.11.17.140
-
-
-# edit /etc/sudoers
+edit /etc/sudoers
 # This file MUST be edited with the 'visudo' command as root.
 #
 # Please consider adding local content in /etc/sudoers.d/ instead of
@@ -54,6 +26,36 @@ user	ALL=(ALL:ALL) PASSWD:ALL
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
+
+
+
+sudo vim /etc/network/interfaces
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug enp0s3
+iface enp0s3 inet static
+	address	10.11.17.140
+	netmask	255.255.255.252
+	gateway	10.11.254.254
+  
+  
+sudo /etc/resolv.conf
+
+domain 42.fr
+search 42.fr
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 10.11.17.140
+
 
 connection bridge
 vm -> settings -> network -> connection_bridge
