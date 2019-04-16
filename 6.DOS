@@ -40,3 +40,4 @@ bantime = 60
 [recidive]
 enabled = true
 
+sudo service fail2ban restart
