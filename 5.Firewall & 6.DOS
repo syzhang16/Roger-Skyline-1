@@ -1,17 +1,3 @@
-Lister les regles existantes
-sudo iptables -L
-
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow 2222
-sudo ufw enable
-sudo ufw status verbose
-
-Verifier si sudo apt update marche
-si pas d'erreur ou quoi c'est bon
-
-OU
-
 1.sudo ufw status (if not enable --> sudo ufw enable)
 2.Setup firewall rules
   - SSH : sudo ufw allow 2222/tcp
