@@ -8,11 +8,15 @@ sudo reboot
 
 Dans iTerm :
 ssh-keygen
-ssh-copy-id syzhang@10.11.17.140 -p 2222
+ssh-copy-id syzhang@10.13.16.140 -p 2222
 
 si le copy ne marche pas faire:
 cd ~/.ssh
 vi known_hosts et supprimer les trucs inutiles
+
+pareil aller sur la vm rm .ssh/
+sudo vim /etc/hosts.deny enlever les ip non utiles
+sudo reboot
 
 
 ssh -p '2222' 'syzhang@10.11.17.140'
