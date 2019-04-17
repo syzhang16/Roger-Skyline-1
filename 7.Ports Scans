@@ -23,10 +23,12 @@ verify with sudo cat portsentry.conf | grep KILL_ROUTE | grep -v '#'
 sudo service portsentry restart
 
 3.Test ports scans 
-nmap --script dos -Pn 10.11.17.140
+SLOWLORIS
+perl SlowLoris/slowloris.pl -dns 10.13.16.140 -port 2222
+if nothing is sent it is working + try to connect to vm if ban ok
 
-
+NMAP
+nmap --script dos -Pn 10.13.16.140
 nmap --script dos -p 2222 <target.com or ip> <enter>
-
-nmap --script dos -p 2222 10.11.17.140
+nmap --script dos -p 2222 10.13.16.140
 'Filtered'
