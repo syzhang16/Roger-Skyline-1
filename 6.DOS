@@ -4,7 +4,7 @@ sudo apt-get install fail2ban nginx
 sudo vim /etc/fail2ban/jail.local
 
 [DEFAULT]
-ignoreip = 127.0.0.1/8 10.11.17.140
+ignoreip = 127.0.0.1/8 10.13.16.140
 
 [sshd]
 port    = 2222
