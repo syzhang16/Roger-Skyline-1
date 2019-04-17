@@ -2,6 +2,7 @@
 SLOWLORIS
 perl SlowLoris/slowloris.pl -dns 10.13.16.140 -port 8888
 if nothing is sent it is working + try to connect to vm if ban ok
+attendre un peu et essayer de se connecter en ssh a la vm
 
 NMAP
 nmap --script dos -Pn 10.13.16.140
