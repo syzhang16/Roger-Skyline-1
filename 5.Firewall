@@ -64,8 +64,8 @@ iptables -t filter -A port-scan -j LOG --log-prefix "IPTABLES PORT-SCAN:"
 iptables -t filter -A port-scan -j REJECT
 
 #DOS - Cette règle limite le nombre de connexions à partir d'une même adresse IP en peu de temps.
-iptables -I INPUT -p TCP --dport 2222  -m state --state NEW -m recent --set
-iptables -I INPUT -p TCP --dport 2222 -m state --state NEW -m recent --update --seconds 60 --hitcount 6 -j DROP
+iptables -I INPUT -p TCP --dport 8888  -m state --state NEW -m recent --set
+iptables -I INPUT -p TCP --dport 8888 -m state --state NEW -m recent --update --seconds 60 --hitcount 6 -j DROP
 iptables -I INPUT -p TCP --dport 80  -m state --state NEW -m recent --set
 iptables -I INPUT -p TCP --dport 80  -m state --state NEW -m recent --update --seconds 60 --hitcount 6 -j DROP
 iptables -I INPUT -p TCP --dport 443 -m state --state NEW -m recent --set
@@ -83,7 +83,7 @@ iptables -A OUTPUT -m conntrack ! --ctstate INVALID -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
 
 # SSH
-iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8888 -j ACCEPT
 
 # web
 iptables -A INPUT -p tcp -m multiport --sports 80,443 -m conntrack --ctstate ESTABLISHED -j ACCEPT
