@@ -63,7 +63,7 @@ Comment the current KILL_ROUTE and uncomment the following one:
 
 KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"
 
-verify with sudo cat portsentry.conf | grep KILL_ROUTE | grep -v '#'
+verify with sudo cat /etc/portsentry/portsentry.conf | grep KILL_ROUTE | grep -v '#'
 
 2.We can now restart the service to make changes effectives
 sudo service portsentry restart
