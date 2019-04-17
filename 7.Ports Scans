@@ -1,10 +1,4 @@
-https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-0168788/
-
-nmap --script dos -p 2222 <target.com or ip> <enter>
-
-nmap --script dos -p 2222 10.11.17.140
-Seul mon port 2222 est ouvert
-
+https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-016878
 
 https://fr-wiki.ikoula.com/fr/Se_prot%C3%A9ger_contre_le_scan_de_ports_avec_portsentry
 sudo apt-get update && sudo apt-get install portsentry
@@ -30,3 +24,9 @@ sudo service portsentry restart
 
 3.Test ports scans 
 nmap --script dos -Pn 10.11.17.140
+
+
+nmap --script dos -p 2222 <target.com or ip> <enter>
+
+nmap --script dos -p 2222 10.11.17.140
+'Filtered'
