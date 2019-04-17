@@ -44,7 +44,7 @@ iface lo inet loopback
 allow-hotplug enp0s3
 iface enp0s3 inet static
 	address	10.13.16.140
-	netmask	255.255.255.252
+	netmask	30
 	gateway	10.13.254.254
   
   
