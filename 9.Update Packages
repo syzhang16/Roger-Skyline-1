@@ -1,16 +1,24 @@
-1.Create the update.sh file and write the following lines inside
-
-echo "sudo apt-get update -y >> /var/log/update_script.log" >> ~/update.sh
-echo "sudo apt-get upgrade -y >> /var/log/update_script.log" >> ~/update.sh
-
-2.Add the task to cron
+1.Add the task to cron
 
 sudo crontab -e
 
-3.Write in the openned file thoses lines
+2. ajouter ces lignes
 
-SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+@reboot { apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
+0 4 * * 6 { apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
 
-@reboot sudo ~/update.sh
-0 4 * * 6 sudo ~/update.sh
+champs         valeurs autorisées
+
+-----         --------------
+
+minute        0-59
+
+heure         0-23
+
+jour du mois  0-31
+
+mois          0-12 (ou noms, voir plus bas)
+
+jour de semaine0-7 (0 et 7 sont Dimanche, ou les noms)
+
+Un champ peut contenir un astérisque « * », qui correspond à l'intervalle « premier-dernier »
