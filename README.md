@@ -160,7 +160,7 @@ Restart SSH:
 `sudo service ssh restart`
 
 Check if root have access:
-`ssh -p 'port number' 'root@ip`
+`ssh -p 'port number' 'root@ip'`
 
 Should have the following output:
 `Permission denied (publickey)`
@@ -171,6 +171,7 @@ Should have the following output:
 
 Create a file named firewall : 
 `sudo vim /etc/network/if-pre-up.d/firewall`
+
 Add the following lines to the file :
 ```#!/bin/bash
 
@@ -276,6 +277,7 @@ sudo reboot
 
 Create a file named jail.local :
 `sudo vim /etc/fail2ban/jail.local`
+
 Add the following lines to the file :
 ```
 [DEFAULT]
@@ -321,7 +323,7 @@ Restart fail2ban :
 
 **Configure PORTSENTRY**
 
-Follow the steps showed in the following link :
+Follow the steps showed in the following link :<br />
 https://fr-wiki.ikoula.com/fr/Se_prot%C3%A9ger_contre_le_scan_de_ports_avec_portsentry
 
 Restart portsentry : 
@@ -331,7 +333,7 @@ Restart portsentry :
 
 **SLOWLORIS**
 
-Follow the steps showed in the following link:
+Follow the steps showed in the following link:<br />
 https://github.com/llaera/slowloris.pl
 
 **NMAP**
@@ -339,6 +341,6 @@ https://github.com/llaera/slowloris.pl
 Enter the following command to tests your ports:
 `nmap --script dos -Pn 10.13.16.140`
 
-Go on this website to know more about Nmap:
+Go on this website to know more about Nmap:<br />
 https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-016878
 
