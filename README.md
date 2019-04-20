@@ -27,10 +27,12 @@ _Region:_ <br />
 Language : `English`<br />
 Country : `United States`<br />
 Keymap to use : `American English`<br />
+
 _Configure the network:_<br />
 Hostname: `debian`<br /><br />
 Domain name : `None`<br />
 Select your timezone : `Eastern`<br />
+
 _Partitions:_<br />
 ```
 Manual
