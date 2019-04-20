@@ -3,22 +3,16 @@
 ## INSTALL VM
 **Install VirtualBox**
 
-Name : roger
-Type : Linux
-Version : Debian (64-bits)
-Memory size
-1024 Mb
-Hard Disk
-select "create a virtual hard disk now"
-Hard Disk file type
-VDI (VirtualBox Disk Image)
-Storage
-8 Gb
-Fixed size
-File location and size
-/sgoinfre/goinfre/Perso/xxx/roger.vdi
-Set bridge connection
-Settings -> network -> bridge connection (connection between host and vm) (-> en0)
+Name : `roger`
+Type : `Linux`
+Version : `Debian (64-bits)`
+Memory size : `1024 Mb`
+Hard Disk : `create a virtual hard disk now`
+Hard Disk file type : `VDI (VirtualBox Disk Image)`
+Storage : `8 Gb & Fixed size`
+File location and size : `/sgoinfre/goinfre/Perso/xxx/roger.vdi`
+Set bridge connection :
+`Settings -> network -> bridge connection (connection between host and vm) (-> en0)`
 
 **Install Debian**
 
@@ -29,23 +23,16 @@ Starting Iso
 
 **Run the vm**
 
-_Region:_
-Language
-English
-Country
-United States
-Keymap to use
-American English
-_Configure the network:_
-Hostname: debian
-Domain name
-None
-Root password + confirm
-Set up users and passwords
-syzhang
-Select your timezone
-Eastern
-_Partitions:_
+_Region:_\n
+Language : `English`
+Country : `United States`
+Keymap to use : `American English`
+_Configure the network:_\n
+Hostname: `debian`
+Domain name : `None`
+Select your timezone : `Eastern`
+_Partitions:_\n
+```
 Manual
 SCSI1 (sda)
 Create new empty partition
@@ -56,29 +43,37 @@ Create a new partition
 The rest -> Primary -> beginning -> Ext4
 Finish partitioning and write changes to disk -> yes
 Use another CD -> no
-_Package manager:_
+```
+_Package manager:_\n
+```
 Debian archive mirror
 United States
 ftp.us.debian.org
-_Configuration:_
+```
+_Configuration:_\n
+```
 HTTP proxy: None
 Install running
 Participate in the survey -> no
 Choose Software to Install
 Select the last 2 softwares: [SSH server] [Standard system utilities] 
 Install GRUB -> yes
+```
 
 ## Login as root
-
+```
 apt-get update && apt-get upgrade
 apt-get install sudo vim iptables-persistent fail2ban sendmail nginx portsentry
-
+```
 ## Create and add user to sudo group
 **Create user:**
-adduser login sudo
+
+`adduser login sudo`
 
 **Add user to sudo:**
-Edit /etc/sudoers : `sudo vim /etc/sudoers`
+
+Edit /etc/sudoers : 
+`sudo vim /etc/sudoers`
 ```# This file MUST be edited with the 'visudo' command as root.
 #
 # Please consider adding local content in /etc/sudoers.d/ instead of
@@ -110,7 +105,8 @@ user	ALL=(ALL:ALL) PASSWD:ALL
 
 ## Static IP and Netmask /30
 
-Edit /etc/network/interfaces : `sudo vim /etc/network/interfaces`
+Edit /etc/network/interfaces :
+`sudo vim /etc/network/interfaces`
 ```
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -140,7 +136,8 @@ nameserver 10.13.16.140
 
 ## Configure SSH
 
-Edit /etc/ssh/sshd_config : `sudo vim /etc/ssh/sshd_config`
+Edit /etc/ssh/sshd_config :
+`sudo vim /etc/ssh/sshd_config`
 ```
 Port: 2222
 Uncomment #PasswordAuthentification yes
@@ -170,7 +167,8 @@ Should have the following output:
 
 **Configure IPTABLES**
 
-Create a file named firewall : `sudo vim /etc/network/if-pre-up.d/firewall`
+Create a file named firewall : 
+`sudo vim /etc/network/if-pre-up.d/firewall`
 Add the following lines to the file :
 ```#!/bin/bash
 
@@ -274,7 +272,8 @@ sudo reboot
 
 **Configure FAIL2BAN**
 
-Create a file named jail.local : `sudo vim /etc/fail2ban/jail.local`
+Create a file named jail.local :
+`sudo vim /etc/fail2ban/jail.local`
 Add the following lines to the file :
 ```
 [DEFAULT]
