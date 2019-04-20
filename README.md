@@ -3,22 +3,22 @@
 ## INSTALL VM
 **Install VirtualBox**
 
-Name : `roger`
-Type : `Linux`
-Version : `Debian (64-bits)`
-Memory size : `1024 Mb`
-Hard Disk : `create a virtual hard disk now`
-Hard Disk file type : `VDI (VirtualBox Disk Image)`
-Storage : `8 Gb & Fixed size`
-File location and size : `/sgoinfre/goinfre/Perso/xxx/roger.vdi`
-Set bridge connection :
+Name : `roger`<br />
+Type : `Linux`<br />
+Version : `Debian (64-bits)`<br />
+Memory size : `1024 Mb`<br />
+Hard Disk : `create a virtual hard disk now`<br />
+Hard Disk file type : `VDI (VirtualBox Disk Image)`<br />
+Storage : `8 Gb & Fixed size`<br />
+File location and size : `/sgoinfre/goinfre/Perso/xxx/roger.vdi`<br />
+Set bridge connection :<br />
 `Settings -> network -> bridge connection (connection between host and vm) (-> en0)`
 
 **Install Debian**
 
-Download debian
-https://www.debian.org/distrib/netinst
-select: amd64
+Download debian <br />
+https://www.debian.org/distrib/netinst<br />
+select: amd64<br />
 Starting Iso
 
 **Run the vm**
