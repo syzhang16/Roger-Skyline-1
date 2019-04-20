@@ -18,20 +18,20 @@ Set bridge connection :<br />
 
 Download debian <br />
 https://www.debian.org/distrib/netinst<br />
-select: amd64<br />
+Select: amd64<br />
 Starting Iso
 
 **Run the vm**
 
-_Region:_\n
-Language : `English`
-Country : `United States`
-Keymap to use : `American English`
-_Configure the network:_\n
-Hostname: `debian`
-Domain name : `None`
-Select your timezone : `Eastern`
-_Partitions:_\n
+_Region:_ <br />
+Language : `English`<br />
+Country : `United States`<br />
+Keymap to use : `American English`<br />
+_Configure the network:_<br />
+Hostname: `debian`<br /><br />
+Domain name : `None`<br />
+Select your timezone : `Eastern`<br />
+_Partitions:_<br />
 ```
 Manual
 SCSI1 (sda)
@@ -44,13 +44,13 @@ The rest -> Primary -> beginning -> Ext4
 Finish partitioning and write changes to disk -> yes
 Use another CD -> no
 ```
-_Package manager:_\n
+_Package manager:_<br />
 ```
 Debian archive mirror
 United States
 ftp.us.debian.org
 ```
-_Configuration:_\n
+_Configuration:_<br />
 ```
 HTTP proxy: None
 Install running
