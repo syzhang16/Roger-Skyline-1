@@ -344,3 +344,13 @@ Enter the following command to tests your ports:
 Go on this website to know more about Nmap:<br />
 https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-016878
 
+## Scripts
+
+Open crontab:
+`sudo crontab -e`
+
+Enter the following lines:
+```
+@reboot { sudo apt-get update; sudo apt-get -y upgrade; } >> /var/log/update_script.log
+0 4 * * 6 { sudo apt-get update; sudo apt-get -y upgrade; } >> /var/log/update_script.log
+```
