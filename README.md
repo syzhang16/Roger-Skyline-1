@@ -173,7 +173,8 @@ Create a file named firewall :
 `sudo vim /etc/network/if-pre-up.d/firewall`
 
 Add the following lines to the file :
-```#!/bin/bash
+```
+#!/bin/bash
 
 #Flush iptables
 sudo iptables -F
