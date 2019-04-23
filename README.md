@@ -327,6 +327,28 @@ Restart fail2ban :
 Follow the steps showed in the following link :<br />
 https://fr-wiki.ikoula.com/fr/Se_prot%C3%A9ger_contre_le_scan_de_ports_avec_portsentry
 
+Or follow the steps showed bellow :
+`sudo /etc/init.d/portsentry stop`
+
+Edit the /etc/default/portsentry :
+`sudo vim /etc/default/portsentry`
+```
+TCP_MODE="atcp"
+UDP_MODE="audp"
+```
+
+Edit /etc/portsentry/portsentry.conf :
+`sudo vim /etc/portsentry/portsentry.conf`
+```
+BLOCK_UDP="1"
+BLOCK_TCP="1"
+```
+Comment the current KILL_ROUTE and uncomment the following one :
+`KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"`
+
+Check with the following command : 
+`sudo cat /etc/portsentry/portsentry.conf | grep KILL_ROUTE | grep -v '#'`
+
 Restart portsentry : 
 `sudo service portsentry restart`
 
