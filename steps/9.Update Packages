@@ -25,3 +25,5 @@ Un champ peut contenir un astérisque « * », qui correspond à l'intervalle «
 
 sudo reboot
 sudo cat /var/log/update_script.log 
+
+sudo service networking status -> check if networking is active
