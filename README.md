@@ -410,3 +410,16 @@ exit 0
 
 Check mails in /var/mail/syzhang :
 `sudo cat /var/mail/syzhang`
+
+## WEB
+
+Follow the steps in the following link :
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-9
+
+
+
+
+
+
+
+
