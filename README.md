@@ -401,6 +401,8 @@ Enter the following lines in the file :
 originalmd5="ee4bdc46f144fe86a7dd913380a81f0d  /etc/crontab"
 if ! echo $originalmd5 | md5sum --quiet -c - ; then
 	echo "/etc/crontab modified" | mail -s "/etc/crontab modified" root
+else
+	echo "No changes on crontab!"
 fi
 
 exit 0
