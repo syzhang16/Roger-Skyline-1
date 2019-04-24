@@ -383,7 +383,7 @@ Enter the following lines:
 **MONITOR CHANGES**
 
 Install mailutils and postfix to send mail to root :
-`sudo apt-get install mailutils postfix`
+`sudo apt-get install -y mailutils postfix`
 
 Create a file called monitor :
 `sudo vim monitor.sh`
