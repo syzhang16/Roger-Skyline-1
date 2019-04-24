@@ -369,6 +369,8 @@ https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-lau
 
 ## Scripts
 
+**UPDATE PACKAGES**
+
 Open crontab:
 `sudo crontab -e`
 
@@ -377,3 +379,24 @@ Enter the following lines:
 @reboot { sudo apt-get update; sudo apt-get -y upgrade; } >> /var/log/update_script.log
 0 4 * * 6 { sudo apt-get update; sudo apt-get -y upgrade; } >> /var/log/update_script.log
 ```
+
+**MONITOR CHANGES**
+
+Create a file called monitor :
+`sudo vim monitor.sh`
+
+Generate a token for /etc/crontab with md5sum :
+`md5sum /etc/crontab`
+
+Enter the following lines in the file :
+```
+#!/bin/bash
+
+originalmd5="270cdb52f9661daeb5e922a94e59b9  /etc/crontab"
+if ! echo $originalmd5 | md5sum --quiet -c - ; then
+	echo "/etc/crontab modified" | mail -s "/etc/crontab modified" root
+fi
+
+exit 0
+```
+
