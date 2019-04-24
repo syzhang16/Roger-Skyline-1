@@ -398,7 +398,7 @@ Enter the following lines in the file :
 ```
 #!/bin/bash
 
-originalmd5="270cdb52f9661daeb5e922a94e59b9 /etc/crontab"
+originalmd5="270cdb52f9661daeb5e922a94e59b9  /etc/crontab"
 if ! echo $originalmd5 | md5sum --quiet -c - ; then
 	echo "/etc/crontab modified" | mail -s "/etc/crontab modified" root
 fi
