@@ -385,6 +385,9 @@ Enter the following lines:
 Install mailutils and postfix to send mail to root :
 `sudo apt-get install -y mailutils postfix`
 
+Postfix configuration :
+`Local Only`
+
 Create a file called monitor :
 `sudo vim monitor.sh`
 
