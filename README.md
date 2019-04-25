@@ -416,7 +416,8 @@ Check mails in /var/mail/syzhang :
 Follow the steps in the following link :
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-9
 
-
+SSL :
+https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-debian-9
 
 
 
