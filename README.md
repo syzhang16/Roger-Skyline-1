@@ -388,11 +388,11 @@ Install mailutils and postfix to send mail to root :
 Postfix configuration :
 `Local Only`
 
-Create a file called monitor :
-`sudo vim monitor.sh`
-
 Generate a token for /etc/crontab with md5sum :
 `md5sum /etc/crontab`
+
+Create a file called monitor :
+`sudo vim monitor.sh`
 
 Enter the following lines in the file :
 ```
