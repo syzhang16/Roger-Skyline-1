@@ -122,9 +122,9 @@ iface lo inet loopback
 # The primary network interface
 allow-hotplug enp0s3
 iface enp0s3 inet static
-	address	10.12.188.140
+	address	10.12.17.140
 	netmask	255.255.255.252
-	gateway	10.13.254.254
+	gateway	10.12.254.254
 ```
   
 Edit /etc/resolv.conf : `sudo vim /etc/resolv.conf`
@@ -133,7 +133,7 @@ domain 42.fr
 search 42.fr
 nameserver 8.8.8.8
 nameserver 8.8.4.4
-nameserver 10.12.188.140
+nameserver 10.12.17.140
 ```
 
 ## Configure SSH
@@ -282,10 +282,10 @@ Create a file named jail.local :
 Add the following lines to the file :
 ```
 [DEFAULT]
-ignoreip = 127.0.0.1/8 10.12.188.140
+ignoreip = 127.0.0.1/8 10.12.17.140
 
 [sshd]
-port    = 8888
+port    = 5555
 enabled = true
 maxretry = 3
 findtime = 30
@@ -293,7 +293,7 @@ bantime = 60
 logpath = /var/log/auth.log
 
 [sshd-ddos]
-port    = 8888
+port    = 5555
 logpath = /var/log/auth.log
 enabled = true
 
@@ -362,7 +362,7 @@ https://github.com/llaera/slowloris.pl
 **NMAP**
 
 Enter the following command to tests your ports:
-`nmap --script dos -Pn 10.12.188.140`
+`nmap --script dos -Pn 10.12.17.140`
 
 Go on this website to know more about Nmap:<br />
 https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-016878
