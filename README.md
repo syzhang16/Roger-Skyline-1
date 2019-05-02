@@ -408,6 +408,9 @@ fi
 exit 0
 ```
 
+Enter the following line in crontab : `sudo crontab -e`
+`0 0 * * * sudo sh /home/syzhang/monitor.sh`
+
 Check mails in /var/mail/syzhang :
 `sudo cat /var/mail/syzhang`
 
