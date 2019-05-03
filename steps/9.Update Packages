@@ -4,7 +4,7 @@ sudo crontab -e
 
 2. ajouter ces lignes
 
-@reboot { apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
+@reboot sleep 30;{ apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
 0 4 * * 6 { apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
 
 champs         valeurs autorisées
