@@ -317,6 +317,16 @@ bantime = 60
 
 [recidive]
 enabled = true
+
+[http-get-dos]
+enabled = true
+port = http,https
+filter = http-get-dos
+logpath = /var/log/nginx/server.log
+maxretry = 300
+findtime = 300
+bantime = 600
+action = iptables[name=HTTP, port=http, protocol=tcp]
 ```
 
 Restart fail2ban : 
