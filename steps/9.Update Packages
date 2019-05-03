@@ -7,22 +7,6 @@ sudo crontab -e
 @reboot sleep 30;{ apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
 0 4 * * 6 { apt-get update; apt-get -y upgrade; apt-get -y dist-upgrade; } >> /var/log/update_script.log
 
-champs         valeurs autorisées
-
------         --------------
-
-minute        0-59
-
-heure         0-23
-
-jour du mois  0-31
-
-mois          0-12 (ou noms, voir plus bas)
-
-jour de semaine0-7 (0 et 7 sont Dimanche, ou les noms)
-
-Un champ peut contenir un astérisque « * », qui correspond à l'intervalle « premier-dernier »
-
 sudo reboot
 sudo cat /var/log/update_script.log 
 
