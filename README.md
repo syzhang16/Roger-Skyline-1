@@ -122,7 +122,7 @@ iface lo inet loopback
 # The primary network interface
 allow-hotplug enp0s3
 iface enp0s3 inet static
-	address	10.12.17.140
+	address	10.12.255.188
 	netmask	255.255.255.252
 	gateway	10.12.254.254
 ```
@@ -133,7 +133,7 @@ domain 42.fr
 search 42.fr
 nameserver 8.8.8.8
 nameserver 8.8.4.4
-nameserver 10.12.17.140
+nameserver 10.12.255.188
 ```
 
 ## Configure SSH
@@ -282,7 +282,7 @@ Create a file named jail.local :
 Add the following lines to the file :
 ```
 [DEFAULT]
-ignoreip = 127.0.0.1/8 10.12.17.140
+ignoreip = 127.0.0.1/8 10.12.255.188
 
 [sshd]
 port    = 5555
@@ -372,7 +372,7 @@ https://github.com/llaera/slowloris.pl
 **NMAP**
 
 Enter the following command to tests your ports:
-`nmap --script dos -Pn 10.12.17.140`
+`nmap --script dos -Pn 10.12.255.188`
 
 Go on this website to know more about Nmap:<br />
 https://null-byte.wonderhowto.com/how-to/use-nmap-7-discover-vulnerabilities-launch-dos-attacks-and-more-016878
