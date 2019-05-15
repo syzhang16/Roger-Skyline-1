@@ -80,3 +80,6 @@ yes
 
 apt-get update && apt-get upgrade
 apt-get install sudo vim iptables-persistent fail2ban sendmail apache2 portsentry
+
+VBoxManage startvm roger --type headless
+VBoxManage controlvm roger poweroff
