@@ -31,3 +31,29 @@ ssh -p '2222' 'syzhang@10.11.17.140'
 Root ne doit pas pouvoir se connecter
 ssh -p '2222' 'root@10.11.17.140'
 Permission denied (publickey).
+
+
+ON UBUNTU
+1. vm settings - network - nat - host-only
+2. ifconfig on mac get vboxnet ip addr
+3. sudo vim /etc/netplan/50-cloud-init.yaml
+# This file is generated from information provided by
+# the datasource.  Changes to it will not persist across an instance.
+# To disable cloud-init's network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    renderer: networkd
+    ethernets:
+        enp0s3:
+            dhcp4: yes
+        enp0s8:
+            dhcp4: no
+            dhcp6: no
+            addresses: [192.168.99.2/30] -> ip vboxnet
+            gateway4: 10.12.254.254
+            nameservers:
+                addresses: [8.8.8.8,8.8.4.4]
+    version: 2
+    
+4. sudo netplan apply
