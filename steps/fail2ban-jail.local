@@ -1,0 +1,70 @@
+[DEFAULT]
+ignoreip = 127.0.0.1/8 10.12.255.188
+
+[sshd]
+port    = 4444
+enabled = true
+maxretry = 3
+findtime = 30
+bantime = 60
+logpath = /var/log/auth.log
+
+[sshd-ddos]
+port    = 4444
+logpath = /var/log/auth.log
+enabled = true
+
+[recidive]
+enabled = true
+
+ ##To block failed login attempts use the below jail.
+ [apache]
+ enabled = true
+ port = http,https
+ filter = apache-auth
+ logpath = /var/log/apache2/*error.log
+ maxretry = 3
+ bantime = 600
+ ignoreip = 10.11.26.148
+
+ ##To block the remote host that is trying to request suspicious URLs, use the below jail.
+ [apache-overflows]
+ enabled = true
+ port = http,https
+ filter = apache-overflows
+ logpath = /var/log/apache2/*error.log
+ maxretry = 3
+ bantime = 600
+ ignoreip = 10.11.26.148
+
+ ##To block the remote host that is trying to search for scripts on the website to execute, use the below jail.
+ [apache-noscript]
+ enabled = true
+ port = http,https
+ filter = apache-noscript
+ logpath = /var/log/apache2/*error.log
+ maxretry = 3
+ bantime = 600
+ ignoreip = 10.11.26.148
+
+ ##To block the remote host that is trying to request malicious bot, use below jail.
+ [apache-badbots]
+ enabled = true
+ port = http,https
+ filter = apache-badbots
+ logpath = /var/log/apache2/*error.log
+ maxretry = 3
+ bantime = 600
+ ignoreip = 10.11.26.148
+
+ ##To stop DOS attack from remote host.
+ [http-get-dos]
+ enabled = true
+ port = http,https
+ filter = http-get-dos
+ logpath = /var/log/apache*/access.log
+ maxretry = 400
+ findtime = 400
+ bantime = 200
+ ignoreip = 10.11.26.148
+ action = iptables[name=HTTP, port=http, protocol=tcp]
