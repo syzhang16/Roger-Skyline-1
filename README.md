@@ -65,7 +65,7 @@ Install GRUB -> yes
 ## Login as root
 ```
 apt-get update && apt-get upgrade
-apt-get install sudo vim iptables-persistent fail2ban sendmail nginx portsentry
+apt-get install sudo vim iptables-persistent fail2ban mailutils postfix nginx portsentry
 ```
 ## Create and add user to sudo group
 **Create user:**
@@ -141,7 +141,7 @@ nameserver 10.12.255.188
 Edit /etc/ssh/sshd_config :
 `sudo vim /etc/ssh/sshd_config`
 ```
-Port: 8888
+Port: 5555
 Uncomment #PasswordAuthentification yes
 Uncomment #PubkeyAuthentication yes
 Uncomment #PermitRootLogin prohibit-password and replace by No
@@ -217,8 +217,8 @@ sudo iptables -A INPUT -p TCP -m state --state NEW -m recent --set
 sudo iptables -A INPUT -p TCP -m state --state NEW -m recent --update --seconds 1 --hitcount 10 -j DROP
 
 #DOS - This rule limits the ammount of connections from the same IP in a short time
-sudo iptables -I INPUT -p TCP --dport 8888 -i enp0s3 -m state --state NEW -m recent --set
-sudo iptables -I INPUT -p TCP --dport 8888 -i enp0s3 -m state --state NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
+sudo iptables -I INPUT -p TCP --dport 5555 -i enp0s3 -m state --state NEW -m recent --set
+sudo iptables -I INPUT -p TCP --dport 5555 -i enp0s3 -m state --state NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
 sudo iptables -I INPUT -p TCP --dport 80 -i enp0s3 -m state --state NEW -m recent --set
 sudo iptables -I INPUT -p TCP --dport 80 -i enp0s3 -m state --state NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
 sudo iptables -I INPUT -p TCP --dport 443 -i enp0s3 -m state --state NEW -m recent --set
@@ -238,8 +238,8 @@ sudo iptables -t filter -A INPUT -i lo -j ACCEPT
 sudo iptables -t filter -A OUTPUT -o lo -j ACCEPT
 
 #ACCEPT SSH
-sudo iptables -A INPUT -p TCP --dport 8888 -j ACCEPT
-sudo iptables -A OUTPUT -p TCP --dport 8888 -j ACCEPT
+sudo iptables -A INPUT -p TCP --dport 5555 -j ACCEPT
+sudo iptables -A OUTPUT -p TCP --dport 5555 -j ACCEPT
 
 #ACCEPT HTTP
 sudo iptables -A INPUT -p TCP --dport 80 -j ACCEPT
@@ -431,9 +431,3 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-
 
 SSL :
 https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-debian-9
-
-
-
-
-
-
